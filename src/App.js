@@ -2,16 +2,16 @@ import './App.css';
 
 import {  Route,BrowserRouter, Routes } from 'react-router-dom';
 
-import Login from './components/Home/Login';
-import Navigation from './components/Navigation/Navigation';
+import Home from './pages/Home';
+import Loginpage from './pages/Loginpage';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
 
-    {/* <Route path='login' element={<> <Login/></>} /> */}
-    <Route path='navigation' element={<> <Navigation/></>} />
+    <Route path='login' element={<Loginpage/>} /> 
+    <Route path='/' element={<Home/>} />
 
    </Routes>
    </BrowserRouter>
