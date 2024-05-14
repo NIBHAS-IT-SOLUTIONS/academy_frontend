@@ -5,11 +5,13 @@ import axios from 'axios'
 import { baseURL } from '../constants/constants'
 
 function Home() {
+  // eslint-disable-next-line
   const [formData, setFormData] = useState({
     name: 'gh',
     age: 'sd',
     city: 'sd'
   });
+  // eslint-disable-next-line
   const handleSession=async()=>{
     var token=localStorage.getItem('name')
     const headers = {
@@ -30,7 +32,7 @@ function Home() {
         <Navigation/>
         {/* <br /><br /><br />br
         <input type='button' value="authntictn" onClick={handleSession} /> */}
-        
+        <Footer/>
     </div>
   )
 }
