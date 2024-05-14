@@ -8,7 +8,7 @@ function Loginpage() {
     <div>
         <Navigation/>
         <Login/>
-        {/* <Footer/> */}
+         <Footer/> 
     </div>
   )
 }

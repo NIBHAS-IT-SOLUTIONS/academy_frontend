@@ -1,9 +1,9 @@
 import './Login.css'
 
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import axios from 'axios'
 import { baseURL } from '../../constants/constants'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -94,21 +94,21 @@ export default function Login() {
 
 
        <div className="limiter">
-		 <div className="container-login100" style={{ backgroundImage: "url(" + "https://i.postimg.cc/LsQPpxMk/Copy-of-Untitled.png" + ")"}}> 
+		 <div className="container-login100" style={{ backgroundImage: 'url(" + "https://i.postimg.cc/LsQPpxMk/Copy-of-Untitled.png" + ")'}}> 
 			<div className="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
 				<form id='myForm' onSubmit={handleSubmit} className="login100-form validate-form flex-sb flex-w" >
 					<span className="login100-form-title p-b-53">
 						Sign In With
 					</span>
 
-					<a href="#" className="btn-face m-b-20">
+					<Link href="#" className="btn-face m-b-20">
           <i class="fa-brands fa-square-facebook"></i>Facebook
-					</a>
+					</Link>
 
-					<a href="#" className="btn-google m-b-20">
+					<Link href="#" className="btn-google m-b-20">
 						<img src="https://i.postimg.cc/jj9VZbgs/icon-google.png" alt="GOOGLE"/>
 						Google
-					</a>
+					</Link>
 					
 					<div className="p-t-31 p-b-9">
 						<span className="txt1">
@@ -126,9 +126,9 @@ export default function Login() {
 							Password
 						</span>
 
-						<a href="#" className="txt2 bo1 m-l-5">
+						<Link to="#" className="txt2 bo1 m-l-5">
 							Forgot?
-						</a>
+						</Link>
 					</div>
 					<div className={`wrap-input100 validate-input ${errors.password ? 'alert-validate' : ''}`} data-validate = {`${errors.password}`}>
 						<input className="input100" type="password" name='password' value={userdata.password} onChange={(e)=>{handleChange(e)}} placeholder='Enter Password' />
@@ -146,9 +146,9 @@ export default function Login() {
 							Not a member?
 						</span>
 
-						<a href="#" className="txt2 bo1">
+						<Link to="#" className="txt2 bo1">
 							Sign up now
-						</a>
+						</Link>
 					</div>
 				</form>
 			</div>
