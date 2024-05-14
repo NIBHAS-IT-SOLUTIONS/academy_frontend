@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import './Navigation.css'
+import { Link } from 'react-router-dom';
 
 function Navigation() {
  
@@ -19,19 +20,19 @@ function Navigation() {
     
      <header>
       
-      <a href="#" className='logo'><i class="ri-home-7-line"></i><span>Logo</span></a>
+      <Link to="#" className='logo'><i class="ri-home-7-line"></i><span>Edu Rainbow</span></Link>
 
       <ul className='navbar'>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Info pedia</a></li>
-        <li><a href="">IQ Test</a></li>
-        <li><a href="">Scholarship</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="">About</Link></li>
+        <li><Link to="">Info pedia</Link></li>
+        <li><Link to="">IQ Test</Link></li>
+        <li><Link to="">Scholarship</Link></li>
       </ul>
 
 <div className="main">
-  <a href="#" className='user'><i class="ri-user-line"></i>Sign in</a>
-  <a href=""><i class="ri-user-line"></i>Login</a>
+  <Link to="#" className='user'>Sign in</Link>
+  <Link to="/login" className='login-btn'>Login</Link>
  
  <div className='bx bx-menu' id='menu-icon'></div>
 </div>
