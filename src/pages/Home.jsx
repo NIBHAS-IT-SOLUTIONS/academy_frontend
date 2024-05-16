@@ -34,7 +34,7 @@ function Home() {
        
         <br /><br /><br /> {/*
         <input type='button' value="authntictn" onClick={handleSession} /> */}
-       <Enrolls/>
+       
     </div>
   )
 }

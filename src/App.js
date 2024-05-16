@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Loginpage from './pages/Loginpage';
 import Enrolls from './components/Enrolls/Enrolls';
 import Classes from './components/Classes/Classes';
+import Subject from './components/Subject/Subject';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
     <Route path='/' element={<Home/>} />
     <Route path='/enroll' element={  <Enrolls/>}/>
     <Route path='/classes' element={  <Classes/>}/>
+    <Route path='/sub' element={  <Subject/>}/>
+    
    </Routes>
    </BrowserRouter>
 
