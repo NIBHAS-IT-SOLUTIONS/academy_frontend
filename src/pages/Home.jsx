@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation/Navigation'
 import Footer from '../components/Footer/Footer'
 import axios from 'axios'
 import { baseURL } from '../constants/constants'
+import Enrolls from '../components/Enrolls/Enrolls'
 
 function Home() {
   // eslint-disable-next-line
@@ -30,9 +31,10 @@ function Home() {
   return (
     <div>
         <Navigation/>
-        {/* <br /><br /><br />br
+       
+        <br /><br /><br /> {/*
         <input type='button' value="authntictn" onClick={handleSession} /> */}
-        <Footer/>
+       <Enrolls/>
     </div>
   )
 }

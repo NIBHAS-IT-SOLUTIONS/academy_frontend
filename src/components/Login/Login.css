@@ -55,10 +55,7 @@ ul, li {
 
 
 /*---------------------------------------------*/
-input {
-	outline: none;
-	border: none;
-}
+
 
 textarea {
   outline: none;
@@ -95,11 +92,7 @@ label {
 }
 
 /*---------------------------------------------*/
-button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-}
+
 
 button:hover {
 	cursor: pointer;
@@ -148,7 +141,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;;
@@ -285,7 +278,8 @@ iframe {
   color: #333333;
   line-height: 1.2;
   font-size: 18px;
-
+  border: none;
+  outline: none;
   display: block;
   width: 100%;
   background: transparent;
@@ -849,12 +843,14 @@ iframe {
 [ Responsive ]*/
 @media (max-width: 768px) {
   .wrap-login100 {
+    margin-top: 75px;
     padding-left: 60px;
     padding-right: 60px;
   }
 
 @media (max-width: 576px) {
   .wrap-login100 {
+    margin-top: 150px;
     padding-left: 15px;
     padding-right: 15px;
   }

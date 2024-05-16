@@ -1,5 +1,4 @@
 import './Login.css'
-
 import {  useState } from 'react'
 import axios from 'axios'
 import { baseURL } from '../../constants/constants'
@@ -12,7 +11,7 @@ export default function Login() {
 
   const navigate =useNavigate();
   const [userdata,setUserdata]=useState({
-    email:"",
+    username:"",
     password:""
    })
    const handleChange=(event)=>{
@@ -30,17 +29,11 @@ export default function Login() {
   const validate = (name, value) => {
     let error = '';
 
-    if (name === 'email') {
-      // eslint-disable-next-line
-      if (!value.trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
-        error = 'Invalid email address';
-      }
-    } else {
+   
       if (value.trim() === '') {
-        error = 'This field is required';
+        error = `${name} required`;
       }
-    }
-
+    
     return error;
   };
 
@@ -95,7 +88,8 @@ export default function Login() {
 
 
        <div className="limiter">
-		 <div className="container-login100" style={{ backgroundImage: 'url(" + "https://i.postimg.cc/LsQPpxMk/Copy-of-Untitled.png" + ")'}}> 
+        
+		 <div className="container-login100" style={{ backgroundImage: "url("+"https://i.postimg.cc/LsQPpxMk/Copy-of-Untitled.png"+")"}}> 
 			<div className="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
 				<form id='myForm' onSubmit={handleSubmit} className="login100-form validate-form flex-sb flex-w" >
 					<span className="login100-form-title p-b-53">
@@ -116,9 +110,9 @@ export default function Login() {
 							Username
 						</span>
 					</div>
-          ``
-					<div className={`wrap-input100 validate-input ${errors.email ? 'alert-validate' : ''}`} data-validate = {`${errors.email}`}>
-						<input className="input100" type="text" name="email" onChange={(e)=>handleChange(e)} value={userdata.email} placeholder='Enter Username' />
+          
+					<div className={`wrap-input100 validate-input ${errors.username ? 'alert-validate' : ''}`} data-validate = {`${errors.username}`}>
+						<input className="input100" type="text" name="username" onChange={(e)=>handleChange(e)} value={userdata.username} placeholder='Enter Username' />
 						<span className="focus-input100"></span>
 					</div>
 					

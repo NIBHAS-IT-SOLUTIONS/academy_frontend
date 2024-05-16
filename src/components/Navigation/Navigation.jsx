@@ -20,7 +20,7 @@ function Navigation() {
     
      <header>
       
-      <Link to="#" className='logo'><i class="ri-home-7-line"></i><span>Edu Rainbow</span></Link>
+      <Link to="#" className='logo'><span>Edu Rainbow</span></Link>
 
       <ul className='navbar'>
         <li><Link to="/">Home</Link></li>
