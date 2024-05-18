@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .flex-container {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    font-size: 30px;
+    text-align: center;  
+  }
+  
+  .flex-item-left {
+    background-color: #f1f1f1;
+    width: 60%;
+    height: 400px;
+    padding: 10px;
+    display: block;
+
+  } 
+  .flex-one-left .land-heading{
+    font-family: "Krona One", sans-serif;
+    float: left;
+    margin: 50px;
+    margin-top: 150px;
+    
+  }
+  .flex-one-left .round1{
+    width: 60px;
+    height: 60px;
+    background-color: #AD88C6;
+    border-radius: 50%;
+    margin-left: 60px;
+    box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;  }
+  .flex-one-left .round2{
+    width: 40px;
+    height: 40px;
+    margin-left: 360px;
+    background-color: #faa24c;
+    box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;  
+    border-radius: 50%;
+  }
+  .flex-one-left .round3{
+    width: 20px;
+    height: 20px;
+    margin-left: 360px;
+    background-color: #EDA0A8;
+  }
+  .flex-one-right img{
+    width: 400px;
+
+  }
+  .land-heading span{
+    font-family: "Krona One", sans-serif;
+    color: #faa24c;
+
+  }
+ 
+  
+  .flex-two {
+    background-color: dodgerblue;
+    padding: 10px;
+  }
+  
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
