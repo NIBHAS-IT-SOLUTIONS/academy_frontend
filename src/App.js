@@ -7,6 +7,7 @@ import Loginpage from './pages/Loginpage';
 import Enrolls from './components/Enrolls/Enrolls';
 import Classes from './components/Classes/Classes';
 import Subject from './components/Subject/Subject';
+import Questions from './components/Questions/Questions';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
     <Route path='/enroll' element={  <Enrolls/>}/>
     <Route path='/classes' element={  <Classes/>}/>
     <Route path='/sub' element={  <Subject/>}/>
-    
+    <Route path='/que' element={  <Questions/>}/>
    </Routes>
    </BrowserRouter>
 
