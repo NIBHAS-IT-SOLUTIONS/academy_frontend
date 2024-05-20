@@ -24,7 +24,7 @@ header {
     width: 100%;
     top: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,6 +34,16 @@ header {
 
 }
 
+
+#container-header {
+    transition: .5s ease;
+  }
+  
+  #container-header.change-color {
+    backdrop-filter: blur(10px);
+    background-color: rgba(11, 11, 11, 0.082); /* Example color change */
+  }
+ 
 .logo {
     display: flex;
     align-items: center;
@@ -48,10 +58,11 @@ header {
 }
 
 .logo span {
-    color: rgb(71, 126, 216);
+    color: rgb(111, 164, 250);
     font-size: 2.5rem;
     font-weight: 200;
     font-family: "Cherry Bomb One", system-ui;
+    transition: 0.2s all ease;
 
 }
 
@@ -213,3 +224,8 @@ main a:hover {
         right: 2%;
     }
 }
+
+
+
+
+

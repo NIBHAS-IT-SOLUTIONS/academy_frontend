@@ -1,70 +1,294 @@
 * {
-    box-sizing: border-box;
-  }
-  
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: #f1f1f1;
+  width: 60%;
+  height: 400px;
+  padding: 10px;
+  display: block;
+
+}
+
+.flex-one-left .land-heading {
+  font-family: "Krona One", sans-serif;
+  float: left;
+  margin: 50px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+}
+
+.flex-one-left .round1 {
+  width: 60px;
+  height: 60px;
+  background-color: #AD88C6;
+  border-radius: 50%;
+  margin-left: 60px;
+  box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;
+}
+
+.flex-one-left .round2 {
+  width: 40px;
+  height: 40px;
+  margin-left: 660px;
+  background-color: #faa24c;
+  box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;
+  border-radius: 50%;
+}
+
+.flex-one-left .round3 {
+  width: 20px;
+  height: 20px;
+  margin-left: 960px;
+  margin-top: 350px;
+  box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;
+  background-color: #EDA0A8;
+  border-radius: 50%;
+}
+
+.flex-one-right img {
+  width: 400px;
+
+}
+
+.land-heading span {
+  font-family: "Krona One", sans-serif;
+  color: #faa24c;
+
+}
+
+
+.flex-two {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-two p{
+  z-index: 1;
+
+}
+
+.flex-two>div {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  width: 400px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+.flex-two > div img{
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-two .card1{
+  background: #AD88C6;
+}
+.flex-two .card2{
+  background: #faa24c;
+}
+.flex-two .card3{
+  background-color: #EDA0A8;
+}
+
+
+@media (max-width: 800px) {
   .flex-container {
-    display: flex;
-    margin-top: 50px;
     flex-direction: column;
-    font-size: 30px;
-    text-align: center;  
   }
-  
-  .flex-item-left {
-    background-color: #f1f1f1;
-    width: 60%;
-    height: 400px;
-    padding: 10px;
-    display: block;
 
-  } 
-  .flex-one-left .land-heading{
-    font-family: "Krona One", sans-serif;
-    float: left;
-    margin: 50px;
-    margin-top: 150px;
-    
-  }
-  .flex-one-left .round1{
-    width: 60px;
-    height: 60px;
-    background-color: #AD88C6;
-    border-radius: 50%;
-    margin-left: 60px;
-    box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;  }
-  .flex-one-left .round2{
-    width: 40px;
-    height: 40px;
-    margin-left: 360px;
-    background-color: #faa24c;
-    box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;  
-    border-radius: 50%;
-  }
-  .flex-one-left .round3{
-    width: 20px;
-    height: 20px;
-    margin-left: 360px;
-    background-color: #EDA0A8;
-  }
-  .flex-one-right img{
-    width: 400px;
-
-  }
-  .land-heading span{
-    font-family: "Krona One", sans-serif;
-    color: #faa24c;
-
-  }
- 
-  
   .flex-two {
-    background-color: dodgerblue;
-    padding: 10px;
+    flex-direction: column;
   }
-  
-  /* Responsive layout - makes a one column-layout instead of two-column layout */
-  @media (max-width: 800px) {
-    .flex-container {
-      flex-direction: column;
-    }
+
+  .flex-two>div ,.flex-two > div img{
+    width: 250px;
+    height: 250px;
   }
+
+}
+
+@media(max-width:1090px) {
+  .flex-two>div ,.flex-two > div img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .flex-two {
+    flex-direction: column;
+
+  }
+}
+
+@media(max-width:1484px) {
+  .flex-two>div ,.flex-two > div img {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+
+
+
+ article {
+  --img-scale: 1.001;
+  --title-color: black;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  /* background: #faa24c; */
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+article .article-wrapper1{
+  background: #AD88C6;
+}
+article .article-wrapper2{
+  background: #faa24c;
+}
+article .article-wrapper3{
+  background: #EDA0A8;
+}
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  text-align: center;
+  margin: 0 0 18px 0;
+  font-family: "poppins", sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: white;
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.ar-1{
+  background: #AD88C6;
+}
+
+
+
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
