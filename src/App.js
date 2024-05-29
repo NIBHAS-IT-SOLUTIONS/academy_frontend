@@ -8,6 +8,8 @@ import Enrolls from './components/Enrolls/Enrolls';
 import Classes from './components/Classes/Classes';
 import Subject from './components/Subject/Subject';
 import Questions from './components/Questions/Questions';
+import Aboutus from './components/Aboutus/Aboutus';
+import Scholarship_page from './pages/Scholarship_page';
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
     <Route path='/classes' element={  <Classes/>}/>
     <Route path='/sub' element={  <Subject/>}/>
     <Route path='/que' element={  <Questions/>}/>
+    <Route path='/aboutus' element={ <Aboutus/> }/>
+    <Route path='/scholarship' element={ <Scholarship_page/> }/>
+
+    
    </Routes>
    </BrowserRouter>
 

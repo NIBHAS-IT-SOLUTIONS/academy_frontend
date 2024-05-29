@@ -3,29 +3,35 @@
 }
 
 .flex-container {
+
   display: flex;
-  margin-top: 50px;
+  margin-top: 100px;
+  padding-bottom: 60px;
   flex-direction: column;
   font-size: 30px;
   text-align: center;
 }
 
-.flex-item-left {
-  background-color: #f1f1f1;
+.flex-one-left {
   width: 60%;
-  height: 400px;
+  height: 10px;
   padding: 10px;
   display: block;
 
 }
 
+
+
 .flex-one-left .land-heading {
   font-family: "Krona One", sans-serif;
   float: left;
-  margin: 50px;
+  margin-bottom: 50px;
+  margin-left: 180px;
+  padding-bottom: 100px;
+  font-size: 3.8rem;
   z-index: -1;
   top: 0;
-  left: 0;
+  text-shadow:  4px 4px #38393b5b;
 
 }
 
@@ -41,6 +47,7 @@
 .flex-one-left .round2 {
   width: 40px;
   height: 40px;
+  
   margin-left: 660px;
   background-color: #faa24c;
   box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;
@@ -51,14 +58,13 @@
   width: 20px;
   height: 20px;
   margin-left: 960px;
-  margin-top: 350px;
   box-shadow: rgba(0, 0, 0, 0.334) 0px 20px 15px;
   background-color: #EDA0A8;
   border-radius: 50%;
 }
 
 .flex-one-right img {
-  width: 400px;
+  width: 500px;
 
 }
 
@@ -111,6 +117,14 @@
 
 
 @media (max-width: 800px) {
+
+  .flex-one-left .land-heading{
+    margin: 90px;
+  }
+  .flex-one-right img{
+    width: 350px;
+  }
+
   .flex-container {
     flex-direction: column;
   }
@@ -127,10 +141,16 @@
 }
 
 @media(max-width:1090px) {
+  .flex-one-left .round2 ,.flex-one-left .round1,.round3{
+
+    display:none;
+    
+  }
   .flex-two>div ,.flex-two > div img {
     width: 300px;
     height: 300px;
   }
+ 
 
   .flex-two {
     flex-direction: column;
@@ -146,7 +166,7 @@
 }
 
 
-
+/* ---------------------------------------------------------------------------- */
 
  article {
   --img-scale: 1.001;
@@ -156,19 +176,28 @@
   position: relative;
   border-radius: 16px;
   box-shadow: none;
-  /* background: #faa24c; */
+  background: #00000080;
   transform-origin: center;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
+  height: 340px;
 }
 article .article-wrapper1{
   background: #AD88C6;
+  background-color: #AD88C6;
+  border-radius: 16px;
+
 }
 article .article-wrapper2{
+  background-color: #faa24c;
   background: #faa24c;
+  border-radius: 16px;
+
 }
 article .article-wrapper3{
   background: #EDA0A8;
+  border-radius: 16px;
+
 }
 article a::after {
   position: absolute;
@@ -240,9 +269,6 @@ article:has(:hover, :focus) {
 .ar-1{
   background: #AD88C6;
 }
-
-
-
 
 .articles {
   display: grid;

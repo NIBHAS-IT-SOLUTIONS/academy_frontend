@@ -1,0 +1,76 @@
+#bcontainer-header {
+    transition: .5s ease;
+}
+
+#bcontainer-header.change-color {
+    backdrop-filter: blur(10px);
+    background-color: rgba(36, 119, 166, 0.082);
+    /* Example color change */
+}
+
+.blogo {
+    display: flex;
+    align-items: center;
+    font-family: "Cherry Bomb One";
+}
+
+.blogo i {
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 3px;
+
+}
+
+.blogo span {
+    color: rgb(111, 164, 250);
+    font-size: 2.5rem;
+    font-weight: 200;
+    font-family: "Cherry Bomb One", system-ui;
+    transition: 0.2s all ease;
+
+}
+
+.bmain {
+    display: flex;
+    align-items: center;
+
+}
+
+.bmain .back-btn
+ {
+    color:white;
+}
+
+.bmain a {
+    text-decoration: none;
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #4DAC96;
+    width: 150px;
+    height: 40px;
+
+}
+
+.user i {
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 7px;
+
+}
+@media (max-width:1484px){
+    #bcontainer-header{
+    }
+}
