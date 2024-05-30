@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { baseURL } from '../../constants/constants'
 import { Link } from 'react-router-dom'
 import DataTable from 'datatables.net-dt';
+import AdminNav from '../AdminNavigation/AdminNav'
 //import $ from 'jQuery';
 
 function Subject() {
@@ -158,6 +159,8 @@ function Subject() {
      
 
   return (
+    <>
+  
     <div> <form onSubmit={handleSubmit}  >
     <input required type="text" onChange={(e)=>handleChange(e)}  name='subject' />
     <select required name="enroll" onChange={(e)=>handleselect(e)} id="" >
@@ -271,7 +274,7 @@ function Subject() {
 
 </table>  */} 
 </div>
-
+</>
 
   )
 }

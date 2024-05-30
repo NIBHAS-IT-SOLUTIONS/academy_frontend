@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import './Questions.css'
-import { baseURL } from '../../constants/constants'
 import axios from 'axios'
-import Viewquestions from './Viewquestions'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
+import { baseURL } from '../../constants/constants'
+import Patternquestions from './Patternquestions'
 import AdminNav from '../AdminNavigation/AdminNav'
-function Questions() {
 
-  const [enrolls,setEnrolls]=useState([])
+function Patterns() {
+    const [enrolls,setEnrolls]=useState([])
   const[selenr,setselenr]=useState('')
   const[classes,setclasses]=useState([])
   const [selclasses,setselclasses]=useState('')
@@ -14,8 +14,6 @@ function Questions() {
   const[question,setQuestion]=useState({
 
   })
-
-  
   const getEnrolls=async()=>{
     
     try {
@@ -58,6 +56,16 @@ const handleChange=(event)=>{
       [name]: value
   }));
 }
+const onFileChange = (event) => {
+    const { name, value } = event.target
+    setQuestion((prevProps) => ({
+        ...prevProps,
+        [name]:event.target.files[0]
+        
+    }));
+}
+
+
 const getsubjects=async(e)=>{
   handleChange(e)
   var classe=e.target.value
@@ -83,50 +91,51 @@ const handleSubmit=async(event)=>{
 
     event.preventDefault();
     console.log(question);
-    var formData = new FormData();
-    formData.append('n_enroll', question.n_enroll);
-    formData.append('n_classes', question.n_classes);
-    formData.append('n_subject', question.n_subject);
-    formData.append('n_question_name', question.n_question_name);
-    formData.append('n_question', question.n_question);
-    formData.append('n_a', question.n_a);
-    formData.append('n_b', question.n_b);
-    formData.append('n_c', question.n_c);
-    formData.append('n_d', question.n_d);
-    formData.append('n_answer', question.n_answer);
+   var formData = new FormData();
+    formData.append('enroll', question.enroll);
+    formData.append('classes', question.classes);
+    formData.append('subject', question.subject);
+    formData.append('question_name', question.question_name);
+    formData.append('question_image', question.question_image);
+    formData.append('question', question.question);
+    formData.append('a', question.a);
+    formData.append('b', question.b);
+    formData.append('c', question.c);
+    formData.append('d', question.d);
+    formData.append('answer', question.answer);
 
 
-    // for (let [key, value] of formData.entries()) {
-    //   console.log(key, value);
-    // }
+    for (let [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
    try {
-      var res = await axios.post(`${baseURL}add_normal/`,formData)
-      console.log(res.data);
+      var res = await axios.post(`${baseURL}add_pattern/`,formData)
+     console.log(res.data);
   }
   catch (err) {
       console.log(err);
   }
-    console.log(formData);
+   console.log(formData);
 }
   return (
     <>
-   
-    <div>
-      <h1>Questions</h1>
-<form onSubmit={handleSubmit} >
   
-    <select name="n_enroll" onChange={(e)=>{getClasses(e)}} id="">
+    <div>
+        <h1>Patterns</h1>
+        <form onSubmit={handleSubmit} >
+  
+    <select name="enroll" onChange={(e)=>{getClasses(e)}} id="">
     <option value="">Select</option>
     {
       
         enrolls.map((enroll)=>{
           return(
-            <option key={enroll} value={enroll}>{enroll}</option>
+            <option value={enroll}>{enroll}</option>
           )
         })
       } 
    </select><br />
-    <select name="n_classes" onChange={(e)=>{getsubjects(e)}} id="">
+    <select name="classes" onChange={(e)=>{getsubjects(e)}} id="">
     <option value="">Select</option>
       {
        
@@ -138,7 +147,7 @@ const handleSubmit=async(event)=>{
       }  
     </select><br />
 
-    <select name="n_subject" onChange={(e)=>{handleChange(e)}} id="">
+    <select name="subject" onChange={(e)=>{handleChange(e)}} id="">
 
     <option value="">Select</option>
       {
@@ -151,13 +160,14 @@ const handleSubmit=async(event)=>{
       }
 
     </select><br />
-    <input onChange={(e)=>{handleChange(e)}} name='n_question_name' type='text'/> <br />
-    <textarea onChange={(e)=>{handleChange(e)}} name="n_question" id=""></textarea><br />
-    <input onChange={(e)=>{handleChange(e)}} name='n_a' type='text'/> <br />
-    <input onChange={(e)=>{handleChange(e)}} name='n_b' type='text'/> <br />
-    <input onChange={(e)=>{handleChange(e)}} name='n_c' type='text'/> <br />
-    <input onChange={(e)=>{handleChange(e)}} name='n_d' type='text'/> <br />
-    <select onChange={(e)=>{handleChange(e)}} name="n_answer" id="">
+    <input onChange={(e)=>{handleChange(e)}} name='question_name' type='text'/> <br />
+    <input onChange={(e)=>{handleChange(e)}} name='question' type='text'/> <br />
+    <input onChange={(e)=>{onFileChange(e)}} name='question_image' type='file' accept=".jpg, .jpeg, .png"/> <br />
+    <input onChange={(e)=>{onFileChange(e)}} name='a' type='file' accept=".jpg, .jpeg, .png"/> <br />
+    <input onChange={(e)=>{onFileChange(e)}} name='b' type='file' accept=".jpg, .jpeg, .png"/> <br />
+    <input onChange={(e)=>{onFileChange(e)}} name='c' type='file'accept=".jpg, .jpeg, .png"/> <br />
+    <input onChange={(e)=>{onFileChange(e)}} name='d' type='file' accept=".jpg, .jpeg, .png"/> <br />
+    <select onChange={(e)=>{handleChange(e)}} name="answer" id="">
       <option value="">Select</option>
       <option value="A">A</option>
       <option value="B">B</option>
@@ -166,10 +176,14 @@ const handleSubmit=async(event)=>{
     </select><br />
     <input type="submit" value="Add Question" />
 </form>
-<Viewquestions/>
-</div>
-</>
+
+
+
+<Patternquestions/>
+    
+    </div>
+    </>
   )
 }
 
-export default Questions
+export default Patterns
