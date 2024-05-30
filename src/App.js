@@ -8,10 +8,8 @@ import Enrolls from './components/Enrolls/Enrolls';
 import Classes from './components/Classes/Classes';
 import Subject from './components/Subject/Subject';
 import Questions from './components/Questions/Questions';
-import Patterns from './components/Questions/Patterns';
-
-import AdminHome from './pages/Admin/AdminHome';
-import AdminLayout from './pages/Admin/AdminLayout';
+import Aboutus from './components/Aboutus/Aboutus';
+import Scholarship_page from './pages/Scholarship_page';
 
 function App() {
   return (
@@ -22,22 +20,12 @@ function App() {
     <Route path='/' element={<Home/>} />
     <Route path='/enroll' element={  <Enrolls/>}/>
     <Route path='/classes' element={  <Classes/>}/>
+    <Route path='/sub' element={  <Subject/>}/>
+    <Route path='/que' element={  <Questions/>}/>
+    <Route path='/aboutus' element={ <Aboutus/> }/>
+    <Route path='/scholarship' element={ <Scholarship_page/> }/>
 
-    <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminHome />} />
-          <Route path="/admin/enrolls" element={<Enrolls/>} />
-          <Route path='/admin/classes' element={<Classes/>}/>
-          <Route path='/admin/subjects' element={  <Subject/>}/>
-          <Route path='/admin/questions' element={  <Questions/>}/>
-          <Route path='/admin/patterns' element={  <Patterns/>}/> 
-    </Route>
     
-    {/* <Route path='/admin' element={<AdminHome />} />
-    <Route path="/admin/enrolls" element={<Enrolls/>} />
-    <Route path='/admin/classes' element={<Classes/>}/>
-    <Route path='/admin/subjects' element={  <Subject/>}/>
-    <Route path='/admin/questions' element={  <Questions/>}/>
-    <Route path='/admin/patterns' element={  <Patterns/>}/> */}
    </Routes>
           
         

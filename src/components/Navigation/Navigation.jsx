@@ -45,7 +45,7 @@ function Navigation() {
         <li><Link to="">About</Link></li>
         <li><Link to="">Info pedia</Link></li>
         <li><Link to="">IQ Test</Link></li>
-        <li><Link to="">Scholarship</Link></li>
+        <li><Link to="/scholarship">Scholarship</Link></li>
       </ul>
 
 <div className="main">
@@ -55,13 +55,7 @@ function Navigation() {
  <div className='bx bx-menu' id='menu-icon'></div>
 </div>
 
-
-
      </header>
-
-
-
-
     </>
    
   )

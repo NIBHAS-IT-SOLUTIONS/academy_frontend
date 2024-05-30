@@ -5,6 +5,7 @@ import axios from 'axios'
 import { baseURL } from '../constants/constants'
 import Enrolls from '../components/Enrolls/Enrolls'
 import Landing from '../components/Landing page/Landing'
+import Aboutus from '../components/Aboutus/Aboutus'
 
 function Home() {
   // eslint-disable-next-line
@@ -16,6 +17,8 @@ function Home() {
       <br /><br /><br /> {/*
         <input type='button' value="authntictn" onClick={handleSession} /> */}
         <Landing/>
+        <Aboutus/>
+        <Footer/>
    
 
     </>
