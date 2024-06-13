@@ -38,13 +38,13 @@ function Navigation() {
     
      <header id='container-header' className={scrolled ? 'change-color' : ''}>
       
-      <Link to="#" className='logo'><span>Edu Rainbow</span></Link>
+      <Link to="/" className='logo'><span>Edu Rainbow</span></Link>
 
       <ul className='navbar'>
         <li><Link to="/">Home</Link></li>
         <li><Link to="">About</Link></li>
         <li><Link to="">Info pedia</Link></li>
-        <li><Link to="">IQ Test</Link></li>
+        <li><Link to="/iqtest">IQ Test</Link></li>
         <li><Link to="/scholarship">Scholarship</Link></li>
       </ul>
 

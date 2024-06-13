@@ -1,5 +1,6 @@
 import React from 'react'
 import './Landing.css'
+import { Link } from 'react-router-dom'
 
 function Landing() {
     return (
@@ -41,6 +42,7 @@ function Landing() {
   </figure>
   <div class="article-body">
     <h2>For Class 5 to 10</h2>
+    <p>State & CBSE</p>
     
   </div>
 </div>
@@ -56,21 +58,25 @@ function Landing() {
       </figure>
       <div class="article-body">
         <h2>For class XI & XII</h2>
-        
+        <p>State & CBSE</p>
       </div>
     </div>
   </article>
   <article>
-
-    <div class="article-wrapper3">
+<Link to="/iqtest">
+<div class="article-wrapper3">
       <figure>
-        <img src="https://i.postimg.cc/xjx6NkdP/freepik-export-20240423061111f-Kgx.png" alt="" />
+        {/* <img src="https://i.postimg.cc/xjx6NkdP/freepik-export-20240423061111f-Kgx.png" alt="" /> */}
+        <img src="https://i.postimg.cc/02KJXSry/slazzer-edit-image.png" alt="" />
       </figure>
       <div class="article-body">
-        <h2>KEAM/NEET/JEE</h2>
+        <h2>IQ Test</h2>
+        <p>Let's find!</p>
        
       </div>
     </div>
+</Link>
+    
   </article>
 </section>
 

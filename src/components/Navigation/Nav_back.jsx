@@ -29,7 +29,7 @@ function Nav_back() {
         <>
             <header id='bcontainer-header' className={scrolled ? 'change-color' : ''}>
 
-                <Link to="#" className='blogo'><span>Edu Rainbow</span></Link>
+                <Link to="/" className='blogo'><span>Edu Rainbow</span></Link>
                 
                 <div className="bmain">
                     <Link to="/" className='back-btn'>Back to home</Link>

@@ -4,12 +4,12 @@ import {  Route,BrowserRouter, Routes } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Loginpage from './pages/Loginpage';
-import Enrolls from './components/Enrolls/Enrolls';
-import Classes from './components/Classes/Classes';
-import Subject from './components/Subject/Subject';
-import Questions from './components/Questions/Questions';
-import Aboutus from './components/Aboutus/Aboutus';
+
 import Scholarship_page from './pages/Scholarship_page';
+
+import Iqtestpage from './pages/Iqtestpage';
+import Exampage from './pages/Exampage';
+import Infopedia from './components/Infopedia/Infopedia';
 
 function App() {
   return (
@@ -18,15 +18,15 @@ function App() {
 
     <Route path='/login' element={<Loginpage/>} /> 
     <Route path='/' element={<Home/>} />
-    <Route path='/enroll' element={  <Enrolls/>}/>
-    <Route path='/classes' element={  <Classes/>}/>
-    <Route path='/sub' element={  <Subject/>}/>
-    <Route path='/que' element={  <Questions/>}/>
-    <Route path='/aboutus' element={ <Aboutus/> }/>
+    <Route path='/iqtest' element={ <Iqtestpage/> }/>
     <Route path='/scholarship' element={ <Scholarship_page/> }/>
-
+    <Route path='/exams' element={ <Exampage/> }/>
+    <Route path='/infopedia' element={<Infopedia/>}/>
     
    </Routes>
+          
+        
+
    </BrowserRouter>
 
   );

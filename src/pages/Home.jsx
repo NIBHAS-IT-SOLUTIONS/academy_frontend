@@ -3,7 +3,7 @@ import Navigation from '../components/Navigation/Navigation'
 import Footer from '../components/Footer/Footer'
 import axios from 'axios'
 import { baseURL } from '../constants/constants'
-import Enrolls from '../components/Enrolls/Enrolls'
+
 import Landing from '../components/Landing page/Landing'
 import Aboutus from '../components/Aboutus/Aboutus'
 

@@ -3,8 +3,9 @@ import {  useState } from 'react'
 import axios from 'axios'
 import { baseURL } from '../../constants/constants'
 import { Link, useNavigate } from 'react-router-dom'
-
-
+import { GoogleOAuthProvider,GoogleLogin } from "@react-oauth/google"
+import LoginGoogle from './LoginwithGoogle/LoginGoogle'
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 
 export default function Login() {
 
@@ -14,6 +15,8 @@ export default function Login() {
     username:"",
     password:""
    })
+   const [ user, setUser ] = useState([]);
+   const [ profile, setProfile ] = useState([]);
    const handleChange=(event)=>{
      const {name,value}=event.target
     setUserdata((prevProps) => ({
@@ -37,6 +40,8 @@ export default function Login() {
     return error;
   };
 
+
+
   const handleSubmit =async (event) => {
     event.preventDefault();
     let valid = true;
@@ -56,24 +61,31 @@ export default function Login() {
     if (valid) {
       console.log(userdata);
       try{
-        var response= await axios.post(`${baseURL}/admin_auth/`,{
+     
+
+        var response= await axios.post(`${baseURL}admin_auth/`,{
          username:userdata.username,
          password:userdata.password
           })
-        console.log(response.data);
+        console.log(response);
         localStorage.setItem("name",response.data.name)
         console.log(localStorage.getItem("name"));
      
         navigate('/')
         } 
         catch(err){
-         console.log(err);}
+         console.log(err,response);}
     }
     else{
 
     }
   };
-
+  const responseMessage = (response) => {
+    console.log(response);
+};
+const errorMessage = (error) => {
+    console.log(error);
+};
 
   
   
@@ -98,11 +110,12 @@ export default function Login() {
 
 					<Link href="#" className="btn-face m-b-20">
           <i class="fa-brands fa-square-facebook"></i>Facebook
+{/* <LoginGoogle/> */}
 					</Link>
 
-					<Link href="#" className="btn-google m-b-20">
-						<img src="https://i.postimg.cc/jj9VZbgs/icon-google.png" alt="GOOGLE"/>
-						Google
+					<Link  href="#" className="btn-google m-b-20">
+						{/* <img src="https://i.postimg.cc/jj9VZbgs/icon-google.png" alt="GOOGLE"/> */}
+						<LoginGoogle/>
 					</Link>
 					
 					<div className="p-t-31 p-b-9">

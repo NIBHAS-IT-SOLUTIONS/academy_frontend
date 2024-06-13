@@ -1,0 +1,30 @@
+.question-container {
+    margin-bottom: 20px;
+  }
+  
+  .question-text {
+    color: #333;
+  }
+  
+  .option-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .option-item {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .option-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .option-item.selected {
+    background-color: #3498db;
+    color: white;
+  }
+  
